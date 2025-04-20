@@ -10,7 +10,7 @@ n4 = 1
 variant = 4221
 random.seed(variant)
 nodes = n3 + 10
-# Fill matrix with 0
+
 def create_zero_matrix(n):
     return [[0 for _ in range(n)] for _ in range(n)]
 undirected_matrix = create_zero_matrix(nodes)
@@ -19,23 +19,11 @@ new_directed_matrix = create_zero_matrix(nodes)
 k = 1 - n3 * 0.01 - n4 * 0.005 - 0.15
 def calc_matrix_el(k):
     return math.floor(random.random() * 2 * k)
-# print('\nDirected matrix:\n')
-# for i in range(nodes):
-#     for j in range(nodes):
-#       directed_matrix[i][j] = calc_matrix_el(k1)
-
-
-# print('\nUndirected matrix:\n')
-# for i in range(nodes):
-#     for j in range(nodes):
-#       undirected_matrix[i][j] = directed_matrix[i][j] or directed_matrix[j][i]
-
-# print('\nNew directed matrix:\n')
 for i in range(nodes):
     for j in range(nodes):
       new_directed_matrix[i][j] = calc_matrix_el(k)
 root = tk.Tk()
-root.title("Lab3 Graph")
+root.title("Lab5 Graph")
 canvas_width = 800
 canvas_height = 800
 canvas = tk.Canvas(root, width=canvas_width, height=canvas_height, bg='white')

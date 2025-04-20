@@ -175,5 +175,5 @@ for new_idx, orig in enumerate(bfs_order, start=1):
 print("\nDFS traversal order:")
 for new_idx, orig in enumerate(dfs_order, start=1):
     print(f"{orig+1} -> {new_idx}")
-# draw_graph(condensed_matrix, k, True)
+
 root.mainloop()
