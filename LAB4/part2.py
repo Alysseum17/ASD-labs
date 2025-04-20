@@ -61,7 +61,6 @@ def reachability_matrix_method(matrix):
      sum_matrix = matrix_sum(sum_matrix,powered_matrix)
   reachability_matrix = boolean_transform(sum_matrix)
   return reachability_matrix
-print('\nDirected matrix(2 power):\n')
 
 def transpose_matrix(matrix):
   n = len(matrix)
@@ -106,6 +105,14 @@ def create_condensation_matrix(matrix, components):
     return cond_mat
 print('\nNew directed matrix:\n')
 print_matrix(new_directed_matrix)
+new_directed_nodes_degrees, in_degs,out_degs = get_directed_in_out_degrees(new_directed_matrix)
+for i in range(len(new_directed_matrix)):
+  print(f'Node {i+1} has degrees {new_directed_nodes_degrees[i]}')  
+  print(f'Node {i+1} has in degrees {in_degs[i]}')
+  print(f'Node {i+1} has out degrees {out_degs[i]}')
+  print()
+is_regular_matrix(new_directed_nodes_degrees)
+has_hanging_isolated_nodes(new_directed_nodes_degrees)
 print('\nDirected matrix(2 power):\n')
 matrix_2_power = matrix_power(new_directed_matrix,2)
 print_matrix(matrix_2_power)
@@ -135,6 +142,14 @@ print('\nCondensation\n')
 condensed_matrix = create_condensation_matrix(new_directed_matrix,strong_components)
 print(condensed_matrix)
 k = len(condensed_matrix)
-
-# draw_graph(condensed_matrix, k, True)
+draw_graph(directed_matrix, nodes,1)
+input("Enter to show next graph")
+canvas.delete("all")
+draw_graph(undirected_matrix, nodes, 0)
+input("Enter to show next graph")
+canvas.delete("all")
+draw_graph(new_directed_matrix, nodes,1)
+input("Enter to show condensed graph")
+canvas.delete("all")
+draw_graph(condensed_matrix, k, 1)
 root.mainloop()

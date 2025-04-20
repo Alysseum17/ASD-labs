@@ -63,22 +63,22 @@ def has_hanging_isolated_nodes(nodes_degrees):
   else:
     print('Matrix has not isolated nodes')
 
-# undirected_nodes_degrees = get_undirected_degrees(undirected_matrix)
-# directed_nodes_degrees, in_degs,out_degs = get_directed_in_out_degrees(directed_matrix)
+undirected_nodes_degrees = get_undirected_degrees(undirected_matrix)
+directed_nodes_degrees, in_degs,out_degs = get_directed_in_out_degrees(directed_matrix)
 
-# print('\nUndirected matrix:\n')
-# for i in range(len(undirected_matrix)):
-#   print(f'Node {i+1} has degrees {undirected_nodes_degrees[i]}')
-#   print()
-# is_regular_matrix(undirected_nodes_degrees)
-# has_hanging_isolated_nodes(undirected_nodes_degrees)
+print('\nUndirected matrix:\n')
+for i in range(len(undirected_matrix)):
+  print(f'Node {i+1} has degrees {undirected_nodes_degrees[i]}')
+  print()
+is_regular_matrix(undirected_nodes_degrees)
+has_hanging_isolated_nodes(undirected_nodes_degrees)
 
-# print('\nDirected matrix:\n')
-# for i in range(len(undirected_matrix)):
-#   print(f'Node {i+1} has degrees {directed_nodes_degrees[i]}')  
-#   print(f'Node {i+1} has in degrees {in_degs[i]}')
-#   print(f'Node {i+1} has out degrees {out_degs[i]}')
-#   print()
-# is_regular_matrix(directed_nodes_degrees)
-# has_hanging_isolated_nodes(directed_nodes_degrees)
+print('\nDirected matrix:\n')
+for i in range(len(undirected_matrix)):
+  print(f'Node {i+1} has degrees {directed_nodes_degrees[i]}')  
+  print(f'Node {i+1} has in degrees {in_degs[i]}')
+  print(f'Node {i+1} has out degrees {out_degs[i]}')
+  print()
+is_regular_matrix(directed_nodes_degrees)
+has_hanging_isolated_nodes(directed_nodes_degrees)
 
