@@ -117,5 +117,9 @@ def draw_graph(matrix,nodes, is_directed):
     draw_nodes(nodes) 
     draw_edges(matrix, nodes, is_directed) 
 
+draw_graph(undirected_matrix,nodes,0)
+input('Show next graph')
+canvas.delete('all')
 draw_graph(directed_matrix,nodes,1)
+
 root.mainloop()
