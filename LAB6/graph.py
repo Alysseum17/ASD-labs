@@ -58,12 +58,12 @@ def draw_nodes(num_nodes):
         canvas.create_oval(
             x-R, y-R, x+R, y+R,
             fill="white", outline="black",
-            tags=(f"node_{i}",)    
+            tags=(f"node_{i}","node")    
         )
         canvas.create_text(
             x, y, text=str(i+1),
             font=("Rubik", 15),
-            tags=(f"node_label_{i}",)  
+            tags=(f"node_label_{i}","node_text")  
         )
 
 def draw_edges(matrix, num_nodes, is_directed):
@@ -123,5 +123,7 @@ def draw_normal_edge(i, j, is_directed, tag=None):
     )
 
 def draw_graph(matrix,nodes, is_directed):
-    draw_nodes(nodes) 
     draw_edges(matrix, nodes, is_directed) 
+    draw_nodes(nodes) 
+    canvas.tag_raise("node")       
+    canvas.tag_raise("node_text")  

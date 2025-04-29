@@ -1,4 +1,5 @@
 from graph import *
+import heapq
 def print_matrix(matrix):
   n = len(matrix)
   for i in range(n):
@@ -82,3 +83,35 @@ def has_hanging_isolated_nodes(nodes_degrees):
 # is_regular_matrix(directed_nodes_degrees)
 # has_hanging_isolated_nodes(directed_nodes_degrees)
 
+# def prim_stepwise(adj, Wmat):
+#     visited=[False]*nodes
+#     start  = next(i for i in range(nodes) if any(adj[i]))
+#     visited[start]=True
+#     pq=[(Wmat[start][v],start,v) for v in range(nodes)
+#         if adj[start][v] and Wmat[start][v] not in (math.inf,0)]
+#     heapq.heapify(pq)
+#     mst=[]
+#     print("=== Prim step by step ===")
+#     while pq:
+#         w,u,v = heapq.heappop(pq)
+#         input(f"({u+1}-{v+1}, w={w})  Enter → ")
+#         if visited[v]:
+#             print("  skip (visited)")
+#             continue
+
+#         tag_e=f"edge_{min(u,v)}_{max(u,v)}"
+#         tag_tx = f"wtxt_{min(u,v)}_{max(u,v)}"
+#         canvas.itemconfig(tag_e,  fill="red",       width=3)        
+#         canvas.itemconfig(f"node_{u}", fill="pale green")          
+#         canvas.itemconfig(f"node_{v}", fill="pale green")
+#         canvas.itemconfig(tag_tx,fill="red")                      
+#         root.update()
+
+#         visited[v]=True
+#         mst.append((u,v))
+#         print(f"  added ({u+1},{v+1})")
+
+#         for x in range(nodes):
+#             if not visited[x] and adj[v][x] and Wmat[v][x] not in (math.inf,0):
+#                 heapq.heappush(pq,(Wmat[v][x],v,x))
+#     return mst
